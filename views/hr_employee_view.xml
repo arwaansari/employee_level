@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_employee_inherit_form" model="ir.ui.view">
+        <field name="name">Hr Employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_promote_btn" string="Promote" class="oe_highlight" type="object"
+                        attrs="{'invisible':[('btn_visibility', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='coach_id']" position="after">
+                <field name="employee_level_id"/>
+                <field name="salary"/>
+                <field name="btn_visibility" invisible="1"/>
+                <field name="level_inc" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

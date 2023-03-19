@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="employee_level_action" model="ir.actions.act_window">
+             <field name="name">Employee Level</field>
+<!--         <field name="type">ir.actions.act_window</field>-->
+             <field name="res_model">employee.level</field>
+             <field name="view_mode">tree</field>
+         </record>
+     <record id="employee_level_tree" model="ir.ui.view">
+            <field name="name">tree</field>
+            <field name="model">employee.level</field>
+            <field name="arch" type="xml">
+<!--                <tree editable="bottom" default_order="salary asc">-->
+                <tree editable="bottom">
+                    <field name="level"/>
+                    <field name="salary"/>
+                </tree>
+            </field>
+        </record>
+
+    <menuitem id="employee_level_menu"
+                  action="employee_level_action"
+                  parent="hr.menu_human_resources_configuration"
+        />
+</odoo>
